@@ -50,6 +50,21 @@ jobs:
         env:
           RUSTDOCFLAGS: "-D warnings"
 
+  oracle:
+    # LLVM as a test oracle only (LexerSketch decision D3): ld.lld links the objects
+    # this crate writes, for every relocation kind on both architectures, and the
+    # patched bytes are checked; llvm-readobj must parse every file without a warning.
+    name: LLVM oracle (ld.lld, llvm-readobj)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install LLVM tools
+        run: sudo apt-get update && sudo apt-get install -y lld llvm
+      - name: Oracle tests
+        run: cargo test --test llvm_oracle -- --ignored
+
   security:
     name: Security (audit + deny)
     runs-on: ubuntu-latest

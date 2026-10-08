@@ -4,6 +4,9 @@
 # `rustfmt.toml` pins `newline_style = "Unix"`.
 * text=auto eol=lf
 
+# Test fixtures that are object files: never touch their bytes.
+*.o binary
+
 # Keep development-only paths out of `git archive` source tarballs.
 /.dev             export-ignore
 /.github          export-ignore

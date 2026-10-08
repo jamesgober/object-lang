@@ -3,7 +3,7 @@
 # =============================================================================
 [package]
 name    = "object-lang"
-version = "0.1.0"
+version = "0.2.0"
 
 # Minimum Supported Rust Version (MSRV)
 rust-version = "1.85"
@@ -16,10 +16,10 @@ license = "Apache-2.0 OR MIT"
 readme = "README.md"
 
 # Description
-description = "Object-file and debug-info writers: ELF, COFF/PE, Mach-O, DWARF, CodeView, and unwind tables."
+description = "Writes and reads object files and executables: ELF64 for x86-64 and AArch64 from a format-neutral model, with no linker or assembler involved."
 
 # Keywords (5 max)
-keywords = ["elf", "pe", "mach-o", "dwarf", "object"]
+keywords = ["elf", "object-file", "executable", "relocation", "compiler"]
 
 # Categories
 categories = ["compilers", "encoding", "no-std"]
@@ -51,7 +51,7 @@ std = []
 # DEPENDENCIES
 # #################################
 [dependencies]
-# First-party -lang dependencies are wired at v0.2.0, when first used.
+# None. No first-party crate is needed yet (see dev/ROADMAP.md, v0.2.0 dependency wiring).
 
 
 # DEV DEPENDENCIES
