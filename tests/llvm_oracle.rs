@@ -1,4 +1,4 @@
-//! Cross-checks against LLVM's tools, used as test oracles only (LexerSketch decision
+//! Cross-checks against LLVM's tools, used as test oracles only (decision
 //! D3: external tools may check our output in tests; nothing ships with them).
 //!
 //! These tests are `#[ignore]`d because they need LLVM installed. Run them with
